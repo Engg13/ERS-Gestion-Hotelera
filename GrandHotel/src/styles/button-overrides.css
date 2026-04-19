@@ -1,0 +1,101 @@
+/* Sobrescribir estilos de botones de Astra UI con tema dorado */
+
+/* Sobrescribir todos los botones */
+button {
+  transition: all 0.2s ease !important;
+}
+
+/* Botones primarios - usar selectores más específicos */
+button[data-astra-button="primary"],
+button[class*="primary"],
+.btn-primary {
+  background: linear-gradient(135deg, #D4AF37 0%, #B8941F 100%) !important;
+  color: #1a1a1a !important;
+  border: 2px solid #B8941F !important;
+  font-weight: 600 !important;
+}
+
+button[data-astra-button="primary"]:hover:not(:disabled),
+button[class*="primary"]:hover:not(:disabled),
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #B8941F 0%, #8B7355 100%) !important;
+  border-color: #8B7355 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3) !important;
+}
+
+/* Botones neutrales */
+button[data-astra-button="neutral"],
+button[class*="neutral"],
+.btn-neutral {
+  background-color: transparent !important;
+  color: #D4AF37 !important;
+  border: 2px solid #D4AF37 !important;
+}
+
+button[data-astra-button="neutral"]:hover:not(:disabled),
+button[class*="neutral"]:hover:not(:disabled),
+.btn-neutral:hover:not(:disabled) {
+  background-color: #F4E5C3 !important;
+  color: #1a1a1a !important;
+  border-color: #B8941F !important;
+}
+
+/* Botones sutiles */
+button[data-astra-button="subtle"],
+button[class*="subtle"],
+.btn-subtle {
+  background-color: transparent !important;
+  color: #B8941F !important;
+  border: none !important;
+}
+
+button[data-astra-button="subtle"]:hover:not(:disabled),
+button[class*="subtle"]:hover:not(:disabled),
+.btn-subtle:hover:not(:disabled) {
+  background-color: #F4E5C3 !important;
+  color: #1a1a1a !important;
+}
+
+/* Estados deshabilitados */
+button:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}
+
+/* Forzar estilos en todos los botones que vienen de @figma/astraui */
+[class*="Button_root"] {
+  transition: all 0.2s ease !important;
+}
+
+[class*="Button_root"][class*="primary"] {
+  background: linear-gradient(135deg, #D4AF37 0%, #B8941F 100%) !important;
+  color: #1a1a1a !important;
+  border: 2px solid #B8941F !important;
+}
+
+[class*="Button_root"][class*="primary"]:hover:not(:disabled) {
+  background: linear-gradient(135deg, #B8941F 0%, #8B7355 100%) !important;
+  border-color: #8B7355 !important;
+}
+
+[class*="Button_root"][class*="neutral"] {
+  background-color: transparent !important;
+  color: #D4AF37 !important;
+  border: 2px solid #D4AF37 !important;
+}
+
+[class*="Button_root"][class*="neutral"]:hover:not(:disabled) {
+  background-color: #F4E5C3 !important;
+  color: #1a1a1a !important;
+}
+
+[class*="Button_root"][class*="subtle"] {
+  background-color: transparent !important;
+  color: #B8941F !important;
+}
+
+[class*="Button_root"][class*="subtle"]:hover:not(:disabled) {
+  background-color: #F4E5C3 !important;
+  color: #1a1a1a !important;
+}

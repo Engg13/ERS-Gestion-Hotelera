@@ -44,11 +44,11 @@ export default function Search() {
             label={t('search.city')}
             placeholder={t('search.cityPlaceholder')}
             options={[
-              { value: 'madrid', label: 'Madrid' },
-              { value: 'barcelona', label: 'Barcelona' },
-              { value: 'sevilla', label: 'Sevilla' },
-              { value: 'valencia', label: 'Valencia' },
-              { value: 'malaga', label: 'Málaga' },
+              { value: 'Santiago', label: t('city.santiago') },
+              { value: 'Valparaíso', label: t('city.valparaiso') },
+              { value: 'Viña del Mar', label: t('city.vinaDelMar') },
+              { value: 'Concepción', label: t('city.concepcion') },
+              { value: 'La Serena', label: t('city.laSerena') },
             ]}
             value={city}
             onChange={(val) => setCity(val)}

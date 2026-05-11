@@ -7,6 +7,9 @@ import RoomDetail from "./pages/RoomDetail";
 import Hotels from "./pages/Hotels";
 import Offers from "./pages/Offers";
 import Gallery from "./pages/Gallery";
+import Profile from "./pages/Profile";
+import Booking from "./pages/Booking";
+import Payment from "./pages/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -40,5 +43,17 @@ export const router = createBrowserRouter([
   {
     path: "/gallery",
     Component: Gallery,
+  },
+  {
+    path: "/profile",
+    Component: Profile,
+  },
+  {
+    path: "/booking",
+    Component: Booking,
+  },
+  {
+    path: "/payment",
+    Component: Payment,
   },
 ]);

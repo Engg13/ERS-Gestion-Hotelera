@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { useParams, useNavigate } from 'react-router';
+import { useParams, useNavigate, useLocation } from 'react-router';
 import { Button, ButtonGroup } from '@figma/astraui';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
+import { useCurrency } from '../context/CurrencyContext';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { ChevronLeft, ChevronRight, Wifi, Tv, Coffee, Wind } from 'lucide-react';
 import Header from '../components/Header';
@@ -23,7 +24,7 @@ const roomsData: Record<
   '1': {
     id: 1,
     name: 'Suite Presidencial',
-    price: 350,
+    price: 250000,
     capacity: 4,
     size: '85 m²',
     images: [
@@ -38,7 +39,7 @@ const roomsData: Record<
   '2': {
     id: 2,
     name: 'Suite Deluxe',
-    price: 250,
+    price: 180000,
     capacity: 3,
     size: '60 m²',
     images: [
@@ -52,7 +53,7 @@ const roomsData: Record<
   '3': {
     id: 3,
     name: 'Habitación Ejecutiva',
-    price: 180,
+    price: 130000,
     capacity: 2,
     size: '40 m²',
     images: [
@@ -65,7 +66,7 @@ const roomsData: Record<
   '4': {
     id: 4,
     name: 'Suite Junior',
-    price: 220,
+    price: 160000,
     capacity: 2,
     size: '50 m²',
     images: [
@@ -78,7 +79,7 @@ const roomsData: Record<
   '5': {
     id: 5,
     name: 'Habitación Estándar',
-    price: 120,
+    price: 85000,
     capacity: 2,
     size: '30 m²',
     images: [
@@ -93,10 +94,13 @@ const roomsData: Record<
 export default function RoomDetail() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const location = useLocation();
   const { t } = useLanguage();
+  const { formatPrice } = useCurrency();
   const { user, isGuest } = useAuth();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  const { city, checkIn, checkOut } = location.state || {};
   const room = id ? roomsData[id] : null;
 
   if (!room) {
@@ -132,13 +136,34 @@ export default function RoomDetail() {
       return;
     }
 
-    // Si es usuario registrado, confirmar reserva
-    if (user) {
-      alert(`${t('reservation.confirmed')} ${user.firstName} ${user.lastName}`);
-    } else {
-      // Si no hay sesión, redirigir a login
+    // Si no hay sesión, redirigir a login
+    if (!user) {
       navigate('/');
+      return;
     }
+
+    // Si no hay fechas, redirigir a buscar primero
+    if (!checkIn || !checkOut) {
+      alert(t('booking.selectDatesFirst'));
+      navigate('/search');
+      return;
+    }
+
+    // Si es usuario registrado, ir a página de reserva
+    navigate('/booking', {
+      state: {
+        room: {
+          id_habitacion: id,
+          numero: `${room.id}`,
+          tipo: room.name,
+          precio_diario: room.price,
+          ciudad: city || 'Santiago',
+          imagen_url: room.images[0],
+        },
+        checkIn,
+        checkOut,
+      },
+    });
   };
 
   return (
@@ -200,8 +225,8 @@ export default function RoomDetail() {
               </div>
 
               <div className="text-right">
-                <span className="text-heading text-gold font-semibold">€{room.price}</span>
-                <span className="text-label-sm text-gold-dark"> {t('rooms.perNight')}</span>
+                <span className="text-heading text-gold font-semibold">{formatPrice(room.price)}</span>
+                <span className="text-label-sm text-gold-dark"> {t('currency.perNight')}</span>
               </div>
             </div>
 

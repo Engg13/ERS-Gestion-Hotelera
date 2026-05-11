@@ -4,6 +4,7 @@ import { Button, InputField, SelectField } from '@figma/astraui';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
 import Header from '../components/Header';
+import CurrencySelector from '../components/CurrencySelector';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -43,17 +44,24 @@ export default function Login() {
         <p className="text-label-sm text-gold-dark text-center mb-xl">{t('login.welcome')}</p>
 
         <div className="flex flex-col gap-lg">
-          <SelectField
-            label={t('login.language')}
-            options={[
-              { value: 'es', label: 'Español' },
-              { value: 'en', label: 'English' },
-              { value: 'fr', label: 'Français' },
-              { value: 'de', label: 'Deutsch' },
-            ]}
-            value={language}
-            onChange={handleLanguageChange}
-          />
+          <div className="flex gap-lg">
+            <div className="flex-1">
+              <SelectField
+                label={t('login.language')}
+                options={[
+                  { value: 'es', label: 'Español' },
+                  { value: 'en', label: 'English' },
+                  { value: 'fr', label: 'Français' },
+                  { value: 'de', label: 'Deutsch' },
+                ]}
+                value={language}
+                onChange={handleLanguageChange}
+              />
+            </div>
+            <div className="flex-1">
+              <CurrencySelector />
+            </div>
+          </div>
 
           <InputField
             label={t('login.email')}

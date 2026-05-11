@@ -1,5 +1,4 @@
-import supabase from '../../supabaseClient'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Button, InputField } from '@figma/astraui';
 import { useLanguage } from '../context/LanguageContext';
@@ -18,20 +17,12 @@ export default function Register() {
     confirmPassword: '',
   });
 
-  const testConexion = async () => {
-    const { data, error } = await supabase.from('usuarios').select('*')
-    console.log('DATA:', data)
-    console.log('ERROR:', error)
-  }
-  useEffect(() => {
-  testConexion()
-}, [])
-
   const handleChange = (field: string) => (value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   const handleRegister = async () => {
+    // Validación básica
     if (!formData.nombre || !formData.correo || !formData.password) {
       alert(t('validation.required'));
       return;
@@ -42,23 +33,18 @@ export default function Register() {
       return;
     }
 
-    const { data, error } = await supabase.from('usuarios').insert([
-      {
-        nombre: formData.nombre,
-        correo: formData.correo,
-        password: formData.password,
-        tipo_usuario: 'cliente'
-      }
-    ])
+    // Registrar usuario
+    const result = await register({
+      nombre: formData.nombre,
+      correo: formData.correo,
+      password: formData.password,
+    });
 
-    if (error) {
-      console.error(error)
-      alert('Error al registrar usuario')
-      return
+    if (result.success) {
+      navigate('/search');
+    } else {
+      alert(result.error || t('validation.registerError'));
     }
-
-    alert('Usuario creado correctamente')
-    navigate('/search')
   };
 
   return (

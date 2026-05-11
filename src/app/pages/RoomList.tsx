@@ -1,14 +1,16 @@
 import { useNavigate, useLocation } from 'react-router';
 import { Button } from '@figma/astraui';
 import { useLanguage } from '../context/LanguageContext';
+import { useCurrency } from '../context/CurrencyContext';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import Header from '../components/Header';
 
+// Prices in Chilean Pesos (CLP)
 const rooms = [
   {
     id: 1,
     name: 'Suite Presidencial',
-    price: 350,
+    price: 250000,
     capacity: 4,
     image: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3RlbCUyMHJvb218ZW58MXx8fHwxNzc2NjA4MzY4fDA&ixlib=rb-4.1.0&q=80&w=1080',
     description: 'Habitación lujosa con vista panorámica',
@@ -16,7 +18,7 @@ const rooms = [
   {
     id: 2,
     name: 'Suite Deluxe',
-    price: 250,
+    price: 180000,
     capacity: 3,
     image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBob3RlbCUyMHJvb218ZW58MXx8fHwxNzc2NjA4MzY4fDA&ixlib=rb-4.1.0&q=80&w=1080',
     description: 'Elegancia y confort en cada detalle',
@@ -24,7 +26,7 @@ const rooms = [
   {
     id: 3,
     name: 'Habitación Ejecutiva',
-    price: 180,
+    price: 130000,
     capacity: 2,
     image: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBob3RlbCUyMHJvb218ZW58MXx8fHwxNzc2NjA4MzY4fDA&ixlib=rb-4.1.0&q=80&w=1080',
     description: 'Perfecta para viajes de negocios',
@@ -32,7 +34,7 @@ const rooms = [
   {
     id: 4,
     name: 'Suite Junior',
-    price: 220,
+    price: 160000,
     capacity: 2,
     image: 'https://images.unsplash.com/photo-1607712617949-8c993d290809?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBob3RlbCUyMHJvb218ZW58MXx8fHwxNzc2NjA4MzY4fDA&ixlib=rb-4.1.0&q=80&w=1080',
     description: 'Espacio acogedor y moderno',
@@ -40,7 +42,7 @@ const rooms = [
   {
     id: 5,
     name: 'Habitación Estándar',
-    price: 120,
+    price: 85000,
     capacity: 2,
     image: 'https://images.unsplash.com/photo-1562438668-bcf0ca6578f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw1fHxsdXh1cnklMjBob3RlbCUyMHJvb218ZW58MXx8fHwxNzc2NjA4MzY4fDA&ixlib=rb-4.1.0&q=80&w=1080',
     description: 'Comodidad a buen precio',
@@ -51,6 +53,7 @@ export default function RoomList() {
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useLanguage();
+  const { formatPrice } = useCurrency();
   const { city, checkIn, checkOut } = location.state || {};
 
   return (
@@ -70,7 +73,11 @@ export default function RoomList() {
             <div
               key={room.id}
               className="bg-card rounded-corner-lg overflow-hidden flex flex-col md:flex-row cursor-pointer hover:shadow-xl transition-all border border-gold/10 hover:border-gold/30"
-              onClick={() => navigate(`/room/${room.id}`)}
+              onClick={() =>
+                navigate(`/room/${room.id}`, {
+                  state: { city, checkIn, checkOut },
+                })
+              }
             >
               <div className="w-full md:w-80 h-64 md:h-auto flex-shrink-0">
                 <ImageWithFallback
@@ -93,11 +100,19 @@ export default function RoomList() {
                 <div className="flex items-center justify-between mt-lg">
                   <div>
                     <span className="text-heading text-gold font-semibold">
-                      €{room.price}
+                      {formatPrice(room.price)}
                     </span>
-                    <span className="text-label-sm text-gold-dark"> {t('rooms.perNight')}</span>
+                    <span className="text-label-sm text-gold-dark"> {t('currency.perNight')}</span>
                   </div>
-                  <Button variant="primary" onClick={() => navigate(`/room/${room.id}`)}>
+                  <Button
+                    variant="primary"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(`/room/${room.id}`, {
+                        state: { city, checkIn, checkOut },
+                      });
+                    }}
+                  >
                     {t('rooms.viewDetails')}
                   </Button>
                 </div>

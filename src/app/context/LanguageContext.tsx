@@ -50,7 +50,7 @@ const translations: Translations = {
 
   // Hotels page
   'hotels.title': { es: 'Nuestros Hoteles', en: 'Our Hotels', fr: 'Nos hôtels', de: 'Unsere Hotels' },
-  'hotels.subtitle': { es: 'Descubre nuestra red de hoteles de lujo en las principales ciudades de España', en: 'Discover our network of luxury hotels in Spain\'s main cities', fr: 'Découvrez notre réseau d\'hôtels de luxe dans les principales villes d\'Espagne', de: 'Entdecken Sie unser Netzwerk von Luxushotels in Spaniens Hauptstädten' },
+  'hotels.subtitle': { es: 'Descubre nuestra red de hoteles de lujo en las principales ciudades de Chile', en: 'Discover our network of luxury hotels in Chile\'s main cities', fr: 'Découvrez notre réseau d\'hôtels de luxe dans les principales villes du Chili', de: 'Entdecken Sie unser Netzwerk von Luxushotels in Chiles Hauptstädten' },
   'hotels.reserveNow': { es: 'Reservar Ahora', en: 'Reserve Now', fr: 'Réserver maintenant', de: 'Jetzt reservieren' },
 
   // Offers page
@@ -68,6 +68,7 @@ const translations: Translations = {
   'nav.hotels': { es: 'Hoteles', en: 'Hotels', fr: 'Hôtels', de: 'Hotels' },
   'nav.offers': { es: 'Ofertas de Viaje', en: 'Travel Offers', fr: 'Offres de voyage', de: 'Reiseangebote' },
   'nav.gallery': { es: 'Galería del Hotel', en: 'Hotel Gallery', fr: 'Galerie de l\'hôtel', de: 'Hotelgalerie' },
+  'nav.profile': { es: 'Mi Perfil', en: 'My Profile', fr: 'Mon Profil', de: 'Mein Profil' },
 
   // Register page
   'register.title': { es: 'Crear Cuenta', en: 'Create Account', fr: 'Créer un compte', de: 'Konto erstellen' },
@@ -101,6 +102,110 @@ const translations: Translations = {
   // Reservation messages
   'reservation.guestPrompt': { es: 'Necesitas crear una cuenta para realizar una reserva. ¿Deseas registrarte ahora?', en: 'You need to create an account to make a reservation. Do you want to register now?', fr: 'Vous devez créer un compte pour effectuer une réservation. Voulez-vous vous inscrire maintenant ?', de: 'Sie müssen ein Konto erstellen, um eine Reservierung vorzunehmen. Möchten Sie sich jetzt registrieren?' },
   'reservation.confirmed': { es: 'Reserva confirmada para', en: 'Reservation confirmed for', fr: 'Réservation confirmée pour', de: 'Reservierung bestätigt für' },
+
+  // Chilean Cities
+  'city.santiago': { es: 'Santiago', en: 'Santiago', fr: 'Santiago', de: 'Santiago' },
+  'city.valparaiso': { es: 'Valparaíso', en: 'Valparaíso', fr: 'Valparaíso', de: 'Valparaíso' },
+  'city.vinaDelMar': { es: 'Viña del Mar', en: 'Viña del Mar', fr: 'Viña del Mar', de: 'Viña del Mar' },
+  'city.concepcion': { es: 'Concepción', en: 'Concepción', fr: 'Concepción', de: 'Concepción' },
+  'city.laSerena': { es: 'La Serena', en: 'La Serena', fr: 'La Serena', de: 'La Serena' },
+
+  // Currency
+  'currency.title': { es: 'Moneda', en: 'Currency', fr: 'Devise', de: 'Währung' },
+  'currency.clp': { es: 'Peso Chileno (CLP)', en: 'Chilean Peso (CLP)', fr: 'Peso Chilien (CLP)', de: 'Chilenischer Peso (CLP)' },
+  'currency.usd': { es: 'Dólar Estadounidense (USD)', en: 'US Dollar (USD)', fr: 'Dollar Américain (USD)', de: 'US-Dollar (USD)' },
+  'currency.perNight': { es: 'por noche', en: 'per night', fr: 'par nuit', de: 'pro Nacht' },
+
+  // Profile page
+  'profile.title': { es: 'Mi Perfil', en: 'My Profile', fr: 'Mon Profil', de: 'Mein Profil' },
+  'profile.subtitle': { es: 'Gestiona tu información personal', en: 'Manage your personal information', fr: 'Gérez vos informations personnelles', de: 'Verwalten Sie Ihre persönlichen Informationen' },
+  'profile.personalInfo': { es: 'Información Personal', en: 'Personal Information', fr: 'Informations Personnelles', de: 'Persönliche Informationen' },
+  'profile.name': { es: 'Nombre Completo', en: 'Full Name', fr: 'Nom Complet', de: 'Vollständiger Name' },
+  'profile.email': { es: 'Correo Electrónico', en: 'Email', fr: 'E-mail', de: 'E-Mail' },
+  'profile.phone': { es: 'Teléfono', en: 'Phone', fr: 'Téléphone', de: 'Telefon' },
+  'profile.memberSince': { es: 'Miembro desde', en: 'Member since', fr: 'Membre depuis', de: 'Mitglied seit' },
+  'profile.accountType': { es: 'Tipo de Cuenta', en: 'Account Type', fr: 'Type de Compte', de: 'Kontotyp' },
+  'profile.client': { es: 'Cliente', en: 'Client', fr: 'Client', de: 'Kunde' },
+  'profile.admin': { es: 'Administrador', en: 'Administrator', fr: 'Administrateur', de: 'Administrator' },
+  'profile.editProfile': { es: 'Editar Perfil', en: 'Edit Profile', fr: 'Modifier le Profil', de: 'Profil Bearbeiten' },
+  'profile.logout': { es: 'Cerrar Sesión', en: 'Logout', fr: 'Déconnexion', de: 'Abmelden' },
+  'profile.myReservations': { es: 'Mis Reservas', en: 'My Reservations', fr: 'Mes Réservations', de: 'Meine Reservierungen' },
+  'profile.edit': { es: 'Editar', en: 'Edit', fr: 'Modifier', de: 'Bearbeiten' },
+  'profile.save': { es: 'Guardar', en: 'Save', fr: 'Enregistrer', de: 'Speichern' },
+  'profile.cancel': { es: 'Cancelar', en: 'Cancel', fr: 'Annuler', de: 'Abbrechen' },
+  'profile.changePhoto': { es: 'Cambiar Foto', en: 'Change Photo', fr: 'Changer la Photo', de: 'Foto Ändern' },
+  'profile.uploadPhoto': { es: 'Subir Foto', en: 'Upload Photo', fr: 'Télécharger Photo', de: 'Foto Hochladen' },
+  'profile.removePhoto': { es: 'Eliminar Foto', en: 'Remove Photo', fr: 'Supprimer Photo', de: 'Foto Entfernen' },
+  'profile.updateSuccess': { es: 'Perfil actualizado correctamente', en: 'Profile updated successfully', fr: 'Profil mis à jour avec succès', de: 'Profil erfolgreich aktualisiert' },
+  'profile.updateError': { es: 'Error al actualizar perfil', en: 'Error updating profile', fr: 'Erreur de mise à jour du profil', de: 'Fehler beim Aktualisieren des Profils' },
+  'profile.phonePlaceholder': { es: '+56 9 1234 5678', en: '+1 555 000 0000', fr: '+33 6 00 00 00 00', de: '+49 000 0000000' },
+
+  // Reservations
+  'reservations.title': { es: 'Mis Reservas', en: 'My Reservations', fr: 'Mes Réservations', de: 'Meine Reservierungen' },
+  'reservations.subtitle': { es: 'Historial de tus reservas', en: 'Your reservation history', fr: 'Historique de vos réservations', de: 'Ihre Reservierungshistorie' },
+  'reservations.noReservations': { es: 'No tienes reservas todavía', en: 'You don\'t have any reservations yet', fr: 'Vous n\'avez pas encore de réservations', de: 'Sie haben noch keine Reservierungen' },
+  'reservations.startBooking': { es: 'Buscar Habitaciones', en: 'Search Rooms', fr: 'Rechercher des Chambres', de: 'Zimmer Suchen' },
+  'reservations.room': { es: 'Habitación', en: 'Room', fr: 'Chambre', de: 'Zimmer' },
+  'reservations.checkIn': { es: 'Entrada', en: 'Check-in', fr: 'Arrivée', de: 'Anreise' },
+  'reservations.checkOut': { es: 'Salida', en: 'Check-out', fr: 'Départ', de: 'Abreise' },
+  'reservations.total': { es: 'Total', en: 'Total', fr: 'Total', de: 'Gesamt' },
+  'reservations.status': { es: 'Estado', en: 'Status', fr: 'Statut', de: 'Status' },
+  'reservations.confirmed': { es: 'Confirmada', en: 'Confirmed', fr: 'Confirmée', de: 'Bestätigt' },
+  'reservations.cancelled': { es: 'Cancelada', en: 'Cancelled', fr: 'Annulée', de: 'Storniert' },
+  'reservations.bookingDate': { es: 'Fecha de Reserva', en: 'Booking Date', fr: 'Date de Réservation', de: 'Buchungsdatum' },
+  'reservations.viewDetails': { es: 'Ver Detalles', en: 'View Details', fr: 'Voir Détails', de: 'Details Anzeigen' },
+  'reservations.cancel': { es: 'Cancelar Reserva', en: 'Cancel Reservation', fr: 'Annuler la Réservation', de: 'Reservierung Stornieren' },
+  'reservations.cancelConfirm': { es: '¿Estás seguro de que deseas cancelar esta reserva?', en: 'Are you sure you want to cancel this reservation?', fr: 'Êtes-vous sûr de vouloir annuler cette réservation ?', de: 'Möchten Sie diese Reservierung wirklich stornieren?' },
+
+  // Booking page
+  'booking.title': { es: 'Confirmar Reserva', en: 'Confirm Reservation', fr: 'Confirmer la Réservation', de: 'Reservierung Bestätigen' },
+  'booking.subtitle': { es: 'Verifica y completa tu información', en: 'Verify and complete your information', fr: 'Vérifiez et complétez vos informations', de: 'Überprüfen und vervollständigen Sie Ihre Informationen' },
+  'booking.personalInfo': { es: 'Información Personal', en: 'Personal Information', fr: 'Informations Personnelles', de: 'Persönliche Informationen' },
+  'booking.reservationDetails': { es: 'Detalles de la Reserva', en: 'Reservation Details', fr: 'Détails de la Réservation', de: 'Reservierungsdetails' },
+  'booking.guestInfo': { es: 'Información del Huésped', en: 'Guest Information', fr: 'Informations sur l\'invité', de: 'Gästeinformationen' },
+  'booking.numberOfGuests': { es: 'Número de Personas', en: 'Number of Guests', fr: 'Nombre de Personnes', de: 'Anzahl der Gäste' },
+  'booking.guests': { es: 'personas', en: 'guests', fr: 'personnes', de: 'Gäste' },
+  'booking.nights': { es: 'noches', en: 'nights', fr: 'nuits', de: 'Nächte' },
+  'booking.pricePerNight': { es: 'Precio por noche', en: 'Price per night', fr: 'Prix par nuit', de: 'Preis pro Nacht' },
+  'booking.totalNights': { es: 'Total noches', en: 'Total nights', fr: 'Total nuits', de: 'Gesamtnächte' },
+  'booking.totalAmount': { es: 'Monto Total', en: 'Total Amount', fr: 'Montant Total', de: 'Gesamtbetrag' },
+  'booking.proceedToPayment': { es: 'Proceder al Pago', en: 'Proceed to Payment', fr: 'Procéder au Paiement', de: 'Zur Zahlung Gehen' },
+  'booking.backToRoom': { es: 'Volver a la Habitación', en: 'Back to Room', fr: 'Retour à la Chambre', de: 'Zurück zum Zimmer' },
+  'booking.guestInformation': { es: 'Información del Huésped', en: 'Guest Information', fr: 'Informations sur l\'Invité', de: 'Gästeinformationen' },
+  'booking.fullName': { es: 'Nombre Completo', en: 'Full Name', fr: 'Nom Complet', de: 'Vollständiger Name' },
+  'booking.email': { es: 'Correo Electrónico', en: 'Email', fr: 'E-mail', de: 'E-Mail' },
+  'booking.phone': { es: 'Teléfono', en: 'Phone', fr: 'Téléphone', de: 'Telefon' },
+  'booking.maxGuests': { es: 'Máximo 4 personas', en: 'Maximum 4 guests', fr: 'Maximum 4 personnes', de: 'Maximal 4 Gäste' },
+  'booking.reservationSummary': { es: 'Resumen de Reserva', en: 'Reservation Summary', fr: 'Résumé de la Réservation', de: 'Reservierungsübersicht' },
+  'booking.checkIn': { es: 'Entrada', en: 'Check-in', fr: 'Arrivée', de: 'Anreise' },
+  'booking.checkOut': { es: 'Salida', en: 'Check-out', fr: 'Départ', de: 'Abreise' },
+  'booking.night': { es: 'noche', en: 'night', fr: 'nuit', de: 'Nacht' },
+  'booking.total': { es: 'Total', en: 'Total', fr: 'Total', de: 'Gesamt' },
+  'booking.noCancelFee': { es: 'Cancelación gratuita hasta 24h antes', en: 'Free cancellation up to 24h before', fr: 'Annulation gratuite jusqu\'à 24h avant', de: 'Kostenlose Stornierung bis 24h vorher' },
+  'booking.nameRequired': { es: 'El nombre es obligatorio', en: 'Name is required', fr: 'Le nom est obligatoire', de: 'Name ist erforderlich' },
+  'booking.emailRequired': { es: 'El correo es obligatorio', en: 'Email is required', fr: 'L\'e-mail est obligatoire', de: 'E-Mail ist erforderlich' },
+  'booking.emailInvalid': { es: 'El correo no es válido', en: 'Email is invalid', fr: 'L\'e-mail n\'est pas valide', de: 'E-Mail ist ungültig' },
+  'booking.phoneRequired': { es: 'El teléfono es obligatorio', en: 'Phone is required', fr: 'Le téléphone est obligatoire', de: 'Telefon ist erforderlich' },
+  'booking.selectDatesFirst': { es: 'Por favor selecciona fechas primero desde la página de búsqueda', en: 'Please select dates first from the search page', fr: 'Veuillez d\'abord sélectionner les dates depuis la page de recherche', de: 'Bitte wählen Sie zuerst Daten von der Suchseite aus' },
+
+  // Payment page
+  'payment.title': { es: 'Selecciona tu Banco', en: 'Select Your Bank', fr: 'Sélectionnez Votre Banque', de: 'Wählen Sie Ihre Bank' },
+  'payment.subtitle': { es: 'Elige tu banco para completar el pago', en: 'Choose your bank to complete payment', fr: 'Choisissez votre banque pour finaliser le paiement', de: 'Wählen Sie Ihre Bank zur Zahlungsabwicklung' },
+  'payment.processing': { es: 'Procesando pago...', en: 'Processing payment...', fr: 'Traitement du paiement...', de: 'Zahlung wird verarbeitet...' },
+  'payment.success': { es: '¡Pago Exitoso!', en: 'Payment Successful!', fr: 'Paiement Réussi !', de: 'Zahlung Erfolgreich!' },
+  'payment.successMessage': { es: 'Tu reserva ha sido confirmada', en: 'Your reservation has been confirmed', fr: 'Votre réservation a été confirmée', de: 'Ihre Reservierung wurde bestätigt' },
+  'payment.viewReservations': { es: 'Ver Mis Reservas', en: 'View My Reservations', fr: 'Voir Mes Réservations', de: 'Meine Reservierungen Anzeigen' },
+  'payment.backToHome': { es: 'Volver al Inicio', en: 'Back to Home', fr: 'Retour à l\'Accueil', de: 'Zurück zur Startseite' },
+  'payment.selectBank': { es: 'Selecciona un banco para continuar', en: 'Select a bank to continue', fr: 'Sélectionnez une banque pour continuer', de: 'Wählen Sie eine Bank zum Fortfahren' },
+  'payment.amountToPay': { es: 'Monto a Pagar', en: 'Amount to Pay', fr: 'Montant à Payer', de: 'Zu Zahlender Betrag' },
+  'payment.choosePaymentMethod': { es: 'Elige tu Método de Pago', en: 'Choose Your Payment Method', fr: 'Choisissez Votre Méthode de Paiement', de: 'Wählen Sie Ihre Zahlungsmethode' },
+  'payment.securePayment': { es: 'Pago 100% seguro y encriptado', en: '100% secure and encrypted payment', fr: 'Paiement 100% sécurisé et crypté', de: '100% sichere und verschlüsselte Zahlung' },
+  'payment.error': { es: 'Error al procesar el pago. Intenta nuevamente.', en: 'Error processing payment. Please try again.', fr: 'Erreur lors du traitement du paiement. Veuillez réessayer.', de: 'Fehler bei der Zahlungsabwicklung. Bitte versuchen Sie es erneut.' },
+  'payment.reservationNumber': { es: 'Número de Reserva', en: 'Reservation Number', fr: 'Numéro de Réservation', de: 'Reservierungsnummer' },
+  'payment.totalPaid': { es: 'Total Pagado', en: 'Total Paid', fr: 'Total Payé', de: 'Gesamt Bezahlt' },
+  'payment.room': { es: 'Habitación', en: 'Room', fr: 'Chambre', de: 'Zimmer' },
+  'payment.guests': { es: 'Personas', en: 'Guests', fr: 'Personnes', de: 'Gäste' },
+  'payment.guest': { es: 'Persona', en: 'Guest', fr: 'Personne', de: 'Gast' },
 };
 
 interface LanguageContextType {
